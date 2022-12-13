@@ -34,6 +34,7 @@ router.post("/signup", (req, res, next) => {
             email,
             password: hashedPassword,
             name,
+            nameForUrl,
             location,
             description,
             imageUrl
