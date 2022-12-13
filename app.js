@@ -26,7 +26,7 @@ app.use("/api/auth", auth);
 
 app.use(
   cors({
-    origin: "https://waveland-client.netlify.app",
+    origin: "*",
     credentials: true
   })
 );
