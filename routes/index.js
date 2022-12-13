@@ -292,11 +292,11 @@ router.get("/users/:id/tracks", isAuthenticated, (req, res, next) => {
     }
 
     Track.find()
-    .populate("user")
     .populate("comments")
     .then(tracks => {
+        console.log("TRACKS: ", tracks)
         const filteredTracks = tracks.slice().filter(track => {
-            return String(track.user._id) === id;
+            return String(track.user) === id;
         })
         
         res.status(200).json(filteredTracks);
